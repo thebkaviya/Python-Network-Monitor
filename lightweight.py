@@ -1,7 +1,7 @@
 import psutil
 import time
 
-print(= """
+print("""
 
     Python Network Monitor - LightWeight Mode (C) 2022 Binula Kavisinghe
     This program comes with ABSOLUTELY NO WARRANTY.
