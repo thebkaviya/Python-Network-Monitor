@@ -1,6 +1,14 @@
 import psutil
 import time
 
+print(= """
+
+    Python Network Monitor - LightWeight Mode (C) 2022 Binula Kavisinghe
+    This program comes with ABSOLUTELY NO WARRANTY.
+    This is free software, and you are welcome to redistribute it under certain conditions.
+        
+    """)
+
 UPDATE_DELAY = 1 # in seconds
 
 def get_size(bytes):
