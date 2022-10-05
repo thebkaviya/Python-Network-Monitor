@@ -1,26 +1,26 @@
 import psutil
 import time
 
+UPDATE_DELAY = 1 # in seconds
+
+def get_size(bytes):
+    """
+    Returns size of bytes in a nice format
+    """
+    for unit in ['', 'K', 'M', 'G', 'T', 'P']:
+        if bytes < 1024:
+            return f"{bytes:.2f}{unit}B"
+        bytes /= 1024
+
 print("""
 
-    Python Network Monitor - LightWeight Mode (C) 2022 Binula Kavisinghe
+    Python Network Monitor (C) 2022 Binula Kavisinghe
     This program comes with ABSOLUTELY NO WARRANTY.
     This is free software, and you are welcome to redistribute it under certain conditions.
         
     """)
 
 def lightweight_mode():
-
-    UPDATE_DELAY = 1 # in seconds
-
-    def get_size(bytes):
-        """
-        Returns size of bytes in a nice format
-        """
-        for unit in ['', 'K', 'M', 'G', 'T', 'P']:
-            if bytes < 1024:
-                return f"{bytes:.2f}{unit}B"
-            bytes /= 1024
 
     # get the network I/O stats from psutil
     io = psutil.net_io_counters()
