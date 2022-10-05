@@ -15,15 +15,13 @@ def get_size(bytes):
         bytes /= 1024
 
 # get the network I/O stats from psutil on each network interface
-# by setting `pernic` to `True`
 io = psutil.net_io_counters(pernic=True)
 
 while True:
-    # sleep for `UPDATE_DELAY` seconds
+
     time.sleep(UPDATE_DELAY)
-    # get the network I/O stats again per interface 
-    io_2 = psutil.net_io_counters(pernic=True)
-    # initialize the data to gather (a list of dicts)
+    io_2 = psutil.net_io_counters(pernic=True)  # get the network I/O stats again per interface
+    
     data = []
     for iface, iface_io in io.items():
         # new - old stats gets us the speed
@@ -34,13 +32,8 @@ while True:
             "Upload Speed": f"{get_size(upload_speed / UPDATE_DELAY)}/s",
             "Download Speed": f"{get_size(download_speed / UPDATE_DELAY)}/s",
         })
-    # update the I/O stats for the next iteration
-    io = io_2
-    # construct a Pandas DataFrame to print stats in a cool tabular style
-    df = pd.DataFrame(data)
-    # sort values per column, feel free to change the column
-    df.sort_values("Download", inplace=True, ascending=False)
-    # clear the screen based on your OS
-    os.system("cls") if "nt" in os.name else os.system("clear")
-    # print the stats
+    io = io_2 # update the I/O stats
+    df = pd.DataFrame(data) # construct a Pandas DataFrame to print stats in a tabular style
+    df.sort_values("Download", inplace=True, ascending=False) # sort values per column
+    os.system("cls") if "nt" in os.name else os.system("clear") # clear the screen
     print(df.to_string())
