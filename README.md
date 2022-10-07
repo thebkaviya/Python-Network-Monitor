@@ -29,5 +29,5 @@ pip install psutil
 
 
 ## Running the Program
-Run the file `hydrator.py`
+Run the file `network_monitor.py`
 
