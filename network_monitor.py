@@ -49,7 +49,7 @@ def lightweight_mode():
         # new - old stats gets us the speed
         us, ds = io_2.bytes_sent - bytes_sent, io_2.bytes_recv - bytes_recv
         # print the total download/upload along with current speeds
-        print(f"    Upload: {get_size(io_2.bytes_sent)}   "
+        print( f"    Upload: {get_size(io_2.bytes_sent)}   "
             f", Download: {get_size(io_2.bytes_recv)}   "
             f", Upload Speed: {get_size(us / UPDATE_DELAY)}/s   "
             f", Download Speed: {get_size(ds / UPDATE_DELAY)}/s      ", end="\r")
