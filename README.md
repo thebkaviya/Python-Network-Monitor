@@ -31,3 +31,14 @@ pip install psutil
 ## Running the Program
 Run the file `network_monitor.py`
 
+## Screenshots
+
+* Startup
+![Startup](./Images/home.png)
+
+* Lightweight Mode
+![Startup](./Images/lighweight.png)
+
+* Full Mode
+![Startup](./Images/full_01.png)
+![Startup](./Images/full_02.png)
