@@ -19,8 +19,9 @@ print("""
 
     Python Network Monitor (C) 2022 Binula Kavisinghe
     This program comes with ABSOLUTELY NO WARRANTY.
-    This is free software, and you are welcome to redistribute it under certain conditions.
+    This is free software, and you are welcome to redistribute it under certain conditions as specified in the GNU General Public License v3.0.
 
+    Please see https://github.com/thebkaviya/Python-Network-Monitor/blob/main/LICENSE or LICENSE.txt for details.
         
     """)
 
